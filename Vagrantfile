@@ -43,6 +43,9 @@ $configureNode = <<-SHELL
 SHELL
 
 Vagrant.configure(2) do |config|
+  config.vm.provider :libvirt do |v|
+   v.qemu_use_session = false
+  end
 
   node_num = 3
 
